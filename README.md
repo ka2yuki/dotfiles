@@ -1,3 +1,10 @@
 # dotfiles
 
-`sh dotfiles/dotfilesLink.sh`
+```zsh
+sh dotfiles/dotfilesLink.sh
+zsh
+l
+
+
+```
+
