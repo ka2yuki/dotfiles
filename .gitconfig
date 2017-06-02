@@ -1,8 +1,8 @@
 [user]
 	name = k 
-	email = kmori@corron.jp
+	email = mori1103k@gmail.com
 [core]
-	excludesfile = /Users/k/.gitignore_global
+	# excludesfile = /Users/k/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
