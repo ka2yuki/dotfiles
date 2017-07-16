@@ -135,6 +135,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
+## npm
+alias n='npm'
+
+## git
+alias g='git'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -174,3 +179,6 @@ esac
 
 # vim:set ft=zsh:
 eval "$(rbenv init -)"
+
+# nodebrew PATH
+export PATH=$PATH:/Users/kojim/.nodebrew/current/bin
