@@ -141,6 +141,9 @@ alias n='npm'
 ## git
 alias g='git'
 
+## mysql cli (sql)only
+alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
@@ -181,4 +184,4 @@ esac
 eval "$(rbenv init -)"
 
 # nodebrew PATH
-export PATH=$PATH:/Users/kojim/.nodebrew/current/bin
+export PATH=$PATH:./node_modules/.bin:/Users/kojim/.nodebrew/current/bin
