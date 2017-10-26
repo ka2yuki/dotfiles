@@ -140,6 +140,9 @@ alias n='npm'
 
 ## git
 alias g='git'
+alias ga='git add .'
+alias gc='git commit' 
+alias gcm='git commit -m'
 
 ## mysql cli (sql)only
 alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
