@@ -140,6 +140,7 @@ alias n='npm'
 
 ## git
 alias g='git'
+alias gs='git status'
 alias ga='git add .'
 alias gc='git commit' 
 alias gcm='git commit -m'
