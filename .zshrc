@@ -144,6 +144,7 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit' 
 alias gcm='git commit -m'
+alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 
 ## mysql cli (sql)only
 alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
@@ -154,6 +155,7 @@ alias sudo='sudo '
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
+
 
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
