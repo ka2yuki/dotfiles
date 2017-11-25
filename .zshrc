@@ -140,11 +140,15 @@ alias n='npm'
 
 ## git
 alias g='git'
-alias gs='git status'
+alias gs='git status && git branch'
 alias ga='git add .'
-alias gc='git commit' 
+alias gc='git add . && git commit -m' 
 alias gcm='git commit -m'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
+alias gb='git branch'
+alias gco='git checkout'
+
+
 
 ## mysql cli (sql)only
 alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
