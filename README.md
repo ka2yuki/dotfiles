@@ -15,3 +15,8 @@ source ~/.zshrc  # 実行させる
 * 上手く反映されない場合, `dotfilesLink.sh`で シンボリンク先を指定しているので、
 ディレクトリが合う様に編集する。
 
+
+# 使ってみたいDotfiles link lists
+- [最強の dotfiles](https://qiita.com/b4b4r07/items/b70178e021bef12cd4a2)
+
+
