@@ -9,6 +9,9 @@ ls -a
 ```zsh
 sh dotfilesLink.sh
 zsh
-l
+source ~/.zshrc  # 実行させる
 ```
+
+* 上手く反映されない場合, `dotfilesLink.sh` で シンボリンク　先を指定しているので、
+ディレクトリ を合う様に編集する。
 
