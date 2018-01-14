@@ -5,6 +5,7 @@ cd Dotfiles
 ls -a
 ```
 
+
 # zsh 適用
 ```zsh
 sh dotfilesLink.sh
@@ -16,10 +17,12 @@ source ~/.zshrc  # 実行させる
 ディレクトリが合う様に編集する。
 
 
+
 # ログインシェルをzshに変更する
-`chsh -s /bin/zsh`
-zshenv > zprofile > zshrc > zloginの順
+`chsh -s /bin/zsh`  
+zshenv > zprofile > zshrc > zloginの順  
 [詳細](https://qiita.com/muran001/items/7b104d33f5ea3f75353f)
+
 
 
 # 使ってみたいDotfiles link lists
