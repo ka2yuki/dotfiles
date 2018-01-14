@@ -16,6 +16,12 @@ source ~/.zshrc  # 実行させる
 ディレクトリが合う様に編集する。
 
 
+# ログインシェルをzshに変更する
+`chsh -s /bin/zsh`
+zshenv > zprofile > zshrc > zloginの順
+[詳細](https://qiita.com/muran001/items/7b104d33f5ea3f75353f)
+
+
 # 使ってみたいDotfiles link lists
 - [最強の dotfiles](https://qiita.com/b4b4r07/items/b70178e021bef12cd4a2)
 
