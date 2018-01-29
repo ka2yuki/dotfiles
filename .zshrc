@@ -120,7 +120,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 # エイリアス
 alias v="vim"
 alias m="mkdir"
-alias l='ls -a'
+alias l='ls -a -F'
 alias ll='ls -l'
 
 alias f='find ~ -name'

@@ -1,3 +1,3 @@
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/d/dotfiles/.zshrc ~/.zshrc
 
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig 
+ln -sf ~/d/dotfiles/.gitconfig ~/.gitconfig 

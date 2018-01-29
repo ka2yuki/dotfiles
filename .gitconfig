@@ -1,6 +1,6 @@
 [user]
-	name = katsuyuki.mori
-	email = mori1103k@gmail.com
+	name = Katsuyuki Mori
+	email = katsuyuki.mr@gmail.com
 [core]
 	# excludesfile = /Users/k/.gitignore_global
 [difftool "sourcetree"]
@@ -18,4 +18,4 @@
 	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
 
 [core]
-	excludesfile = /Users/mori/.gitignore_global
+	excludesfile = /Users/ka2uk/.gitignore_global
