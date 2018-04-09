@@ -135,8 +135,10 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
+
 ## npm
 alias n='npm'
+
 
 ## git
 alias g='git'
@@ -147,7 +149,11 @@ alias gcm='git commit -m'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gb='git branch'
 alias gco='git checkout'
+alias gr='git remote' 
+alias grv='git remote -v' 
 
+# VSCode setting
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
 
 
 ## mysql cli (sql)only
@@ -199,3 +205,6 @@ export PATH=$PATH:./node_modules/.bin:/Users/kojim/.nodebrew/current/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
