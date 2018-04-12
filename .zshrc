@@ -209,3 +209,4 @@ export NVM_DIR="$HOME/.nvm"
 
 
 
+export PATH=/Applications/MAMP/bin/php/php7.2.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:./node_modules/.bin
