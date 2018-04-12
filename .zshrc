@@ -197,7 +197,8 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
-eval "$(rbenv init -)"
+# error line!!
+# eval "$(rbenv init -)"
 
 # nodebrew PATH
 export PATH=$PATH:./node_modules/.bin:/Users/kojim/.nodebrew/current/bin
