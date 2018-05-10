@@ -149,12 +149,12 @@ alias gcm='git commit -m'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gb='git branch'
 alias gco='git checkout'
-alias gr='git remote' 
+alias gr='git remote -v' 
 alias grv='git remote -v' 
 
 # VSCode setting
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
-
+alias vs='code .'
 
 ## mysql cli (sql)only
 alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
