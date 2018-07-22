@@ -145,12 +145,16 @@ alias g='git'
 alias gs='git status && git branch'
 alias ga='git add .'
 alias gc='git add . && git commit -m' 
+gcp () {
+  git add -A && git commit -m "$1" && git push
+}
 alias gcm='git commit -m'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gb='git branch'
 alias gco='git checkout'
 alias gr='git remote -v' 
 alias grv='git remote -v' 
+alias gp='git push'
 
 # VSCode setting
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
@@ -220,3 +224,7 @@ etc=/Applications/Docker.app/Contents/Resources/etc
 ln -s $etc/docker.zsh-completion /usr/local/share/zsh/site-functions/_docker
 ln -s $etc/docker-machine.zsh-completion /usr/local/share/zsh/site-functions/_docker-machine
 ln -s $etc/docker-compose.zsh-completion /usr/local/share/zsh/site-functions/_docker-compose
+
+## Curl Error in High Sierra Version
+# export PATH="/usr/local/opt/curl/bin:$PATH"
+# export PATH="/usr/local/opt/openssl/bin:$PATH"
