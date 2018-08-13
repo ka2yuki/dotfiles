@@ -13,7 +13,11 @@ zsh
 source ~/.zshrc  # 実行させる
 ```
 
-# リンボリックリンクの作成
+**Done**
+
+
+# Other Tips
+## リンボリックリンクの作成
 ```zsh
 ln -s [該当ファイルのpwd] [リンクを作成したい場所pwd]
 ```
@@ -22,8 +26,7 @@ ln -s [該当ファイルのpwd] [リンクを作成したい場所pwd]
 ディレクトリが合う様に編集する。
 
 
-
-# ログインシェルをzshに変更する
+## ログインシェルをzshに変更する
 `chsh -s /bin/zsh`  
 zshenv > zprofile > zshrc > zloginの順  
 [詳細](https://qiita.com/muran001/items/7b104d33f5ea3f75353f)
