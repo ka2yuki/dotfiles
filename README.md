@@ -10,13 +10,13 @@ ls -a
 ```zsh
 sh dotfilesLink.sh
 zsh
-source ~/.zshrc  # 実行させる
+# source ~/.zshrc  # 実行させる
 ```
 
 **Done**
 
 
-# Other Tips
+# Other
 ## リンボリックリンクの作成
 ```zsh
 ln -s [該当ファイルのpwd] [リンクを作成したい場所pwd]
@@ -33,7 +33,7 @@ zshenv > zprofile > zshrc > zloginの順
 
 
 
-# 使ってみたいDotfiles link lists
+# 気になる Dotfiles
 - [最強の dotfiles](https://qiita.com/b4b4r07/items/b70178e021bef12cd4a2)
 
 
