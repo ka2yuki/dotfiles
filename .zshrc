@@ -145,9 +145,7 @@ alias g='git'
 alias gs='git status && git branch'
 alias ga='git add .'
 alias gc='git add . && git commit -m' 
-gcp ($1) {
-  git add -A && git commit -m "$1" && git push
-}
+gcp() { git add -A && git commit -m $1 && git push }
 alias gcm='git commit -m'
 alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 alias gb='git branch'
