@@ -1,4 +1,4 @@
-# clone
+# Clone
 ```zsh
 git clone https://github.com/ka2yuki/Dotfiles.git
 cd Dotfiles
@@ -9,7 +9,7 @@ zsh
 ```
 
 
-# Other
+# Tips
 ## Symbolic link
 ```zsh
 ln -s [該当ファイルのpwd] [リンクを作成したい場所pwd]
