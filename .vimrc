@@ -1,11 +1,11 @@
-" 挙動を vi 互換ではなく、Vim のデフォルト設定にする => .vimrcが存在すれば自動的に有効化されるので設定不要
+" 挙動を vi 互換ではなく、Vim のデフォルト設定にする 
+"  => .vimrc が存在すれば自動的に有効化されるので設定不要
 " set nocompatible
-" 一旦ファイルタイプ関連を無効化する => vim-plugでは不要
+" 一旦ファイルタイプ関連を無効化する => vim-plugでは不要??
 " filetype off
 
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
+" Vim Plugin Manager
+" https://github.com/junegunn/vim-plug
 
 call plug#begin('~/.vim/plugged')
 
