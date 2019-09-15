@@ -1,0 +1,9 @@
+{
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "vscode-icons",
+    "update.mode": "none",
+    "[php]": {
+        // "editor.formatOnSave": true
+    },
+    "window.zoomLevel": 0
+}
