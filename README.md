@@ -5,19 +5,9 @@ cd Dotfiles
 ls -a
 
 sh dotfilesLink.sh
-zsh
 ```
 
 
-# Tips
-## Symbolic link
-```zsh
-ln -s [該当ファイルのpwd] [リンクを作成したい場所pwd]
-```
-
-
-## chenge logins shell to zsh.
-`chsh -s /bin/zsh`  
 zshenv > zprofile > zshrc > zloginの順  
 [more](https://qiita.com/muran001/items/7b104d33f5ea3f75353f)
 
