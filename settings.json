@@ -2,8 +2,10 @@
     "editor.minimap.enabled": false,
     "workbench.iconTheme": "vscode-icons",
     "update.mode": "none",
-    "[php]": {
-        // "editor.formatOnSave": true
+    "[scss]": {
+        "editor.formatOnSave": true
     },
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true
 }
