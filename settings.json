@@ -1,8 +1,10 @@
 {
     "editor.minimap.enabled": false,
-    "workbench.iconTheme": "vscode-icons",
     "update.mode": "none",
     "[scss]": {
+        "editor.formatOnSave": true
+    },
+    "[js]": {
         "editor.formatOnSave": true
     },
     "window.zoomLevel": 0,
