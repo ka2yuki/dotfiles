@@ -198,7 +198,6 @@ case ${OSTYPE} in
         ;;
 esac
 
-
 # vim:set ft=zsh:
 
 # if use rbenv. its version contorol ruby.
@@ -206,13 +205,6 @@ eval "$(rbenv init -)"
 
 #this berow RVM. not use.
 #if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
-
-# Docker Command Completion(補完) // Docker Command を Tabで補完してくれます
-etc=/Applications/Docker.app/Contents/Resources/etc
-ln -s $etc/docker.zsh-completion /usr/local/share/zsh/site-functions/_docker
-ln -s $etc/docker-machine.zsh-completion /usr/local/share/zsh/site-functions/_docker-machine
-ln -s $etc/docker-compose.zsh-completion /usr/local/share/zsh/site-functions/_docker-compose
 
 ## Curl Error in High Sierra Version
 export PATH="$HOME/.rbenv/bin:$PATH"

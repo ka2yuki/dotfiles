@@ -7,7 +7,13 @@
     "[js]": {
         "editor.formatOnSave": true
     },
-    "window.zoomLevel": 0,
+    "editor.formatOnSave": true,
+    "html.format.enable": true,
+    "html.format.indentInnerHtml": true,
+    "window.zoomLevel": 1,
     "git.enableSmartCommit": true,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false
+    
 }
