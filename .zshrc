@@ -200,15 +200,6 @@ esac
 
 # vim:set ft=zsh:
 
-# if use rbenv. its version contorol ruby.
-eval "$(rbenv init -)"
-
-#this berow RVM. not use.
-#if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
-## Curl Error in High Sierra Version
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

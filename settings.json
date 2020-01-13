@@ -14,6 +14,6 @@
     "git.enableSmartCommit": true,
     "git.autofetch": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "explorer.confirmDragAndDrop": false
-    
+    "explorer.confirmDragAndDrop": false,
+    "window.newWindowDimensions": "maximized"
 }
