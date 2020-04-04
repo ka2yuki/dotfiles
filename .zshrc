@@ -118,10 +118,13 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # エイリアス
+########################################
 alias v="vim"
 alias m="mkdir"
+alias mkdir='mkdir -p'
 alias l='ls -a -F'
 alias ll='ls -l'
+alias pwdc='pwd | pbcopy'
 
 alias f='find ~ -name'
 alias o='open'
@@ -134,19 +137,20 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias mkdir='mkdir -p'
-
 ## npm
 alias n='npm'
-
 
 ## git
 alias g='git'
 alias gs='git status && git branch'
 alias ga='git add .'
 alias gc='git add . && git commit -m' 
+alias gcl='git clone'
+alias cl='git clone'
+alias gc='git add . && git commit -m' 
 gcp() { git add -A && git commit -m $1 && git push }
 alias gcm='git commit -m'
+alias gca='git commit --amend'
 alias gl='git log --graph --all'
 # alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
 # alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
@@ -207,3 +211,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+
+eval "$(rbenv init -)"

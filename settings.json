@@ -1,5 +1,6 @@
 {
-    // https://qiita.com/WGG_SH/items/82f83ba91ca0d7f5c8b7
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "vetur.format.defaultFormatter.css": "prettier",
     "[scss]": {
         "editor.formatOnSave": true
     },
@@ -16,18 +17,41 @@
     "editor.renderWhitespace": "all", // 半角スペースを常に表示
     "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
     "editor.tabSize": 2, // タブのサイズ変更
-    // markdown
+    // 
+    // MarkDown
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // "editor.formatOnSave": true,
+        // "files.trimTrailingWhitespace": false,
+        "editor.insertSpaces": true,
+        // "editor.trimAutoWhitespace": false,
+        "editor.renderWhitespace": "all"
+        // "editor.renderWhitespace": "boundary"
+    },
     "markdown.preview.breaks": true, // 改行を反映
     "markdown.preview.fontSize": 17, // 文字サイズ
+    "markdown.preview.linkify": true,
     // "markdown.preview.lineHeight": 1.1, // 行幅
+    // Caution : 「無視した場合は、そこまで重大ではないが、ある程度の害を招く可能性がある」
+    // Warning : 「無視した場合は、重傷を負ったり、命を落とす可能性がある危険な状態」
+    // Danger  : 危険です！！
+    // caution　＜　warning　＜　danger
+    // 気を付ける < かなりヤバイ < 超危険
+    // ..
+    // !🚨Caution!
+    // Put in Each Project folder.
     "markdown.styles": [
-        // "~/markdown_pdf.css",
+        "~/Library/Application\\ Support/Code/User",
+        "~/Application Support/Code/User/md_preview.css",
+        // "md_preview.css",
     ],
     // markdown-pdf
     "markdown-pdf.convertOnSave": false, // 保存時に自動でpdf化しない
     "markdown-pdf.type": "pdf", // PDFで出力
     "markdown-pdf.styles": [
-        // "~/markdown_pdf.css",
+        "~/Library/Application\\ Support/Code/User",
+        "~/Application Support/Code/User/md_preview.css",
+        // "md_preview.css"
     ],
     "git.enableSmartCommit": true,
     "git.autofetch": true,
@@ -39,9 +63,14 @@
     "emmet.variables": { // Emmet で展開される HTML の言語を変更
         "lang": "ja"
     },
-    "files.exclude": { // エクスプローラーから非表示にするファイル
-        // "**/*.map": true,
-        // "**/node_modules": true
+    "files.exclude": { // exclude: "s" を忘れずに。
+        // "**/node_modules": true,
+        // if you need React-Project..
+        // "**/public": true,
+        "**/build": true,
+        // "**/.firebase": true,
+        "**/package-lock.json": true,
+        ".DS_Store": true,
     },
     "html.format.enable": true,
     "html.format.indentInnerHtml": true,
@@ -59,5 +88,7 @@
     "window.title": "${activeEditorMedium}${separator}${rootName}", // ウインドウ上部に表示する文字列の設定
     "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
     "workbench.editor.tabSizing": "shrink", // タブの表示設定
-    "workbench.editor.centeredLayoutAutoResize": true
+    "workbench.editor.centeredLayoutAutoResize": true,
+    "terminal.integrated.confirmOnExit": true,
+    "files.hotExit": "off"
 }

@@ -1,11 +1,12 @@
 [user]
-	name = ka2uk
+	name = katsuyuki
 	email = mori1103k@gmail.com
 	# namm = ka2yuki
 [core]
 	# excludesfile = /Users/k/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -16,7 +17,7 @@
 	# ref: https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats
 	# Doc: https://git-scm.com/docs/git-log#Documentation/git-log.txt---dateltformatgt
 [format]
-  pretty = format:%C(magenta)%h%Creset [%C(cyan)%ad%Creset]: <%C(099 italic)%cn%Creset>: %C(green ul)%s%Creset
+  pretty = format:%C(magenta)%h%Creset[%C(cyan)%ad%Creset]<%C(099 italic)%cn%Creset>: %C(green ul)%s%Creset
 	# How to SET Color: https://git-scm.com/docs/git-config#Documentation/git-config.txt-color
 	# This below sample..
 	# alias gl='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
