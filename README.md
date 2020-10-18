@@ -13,7 +13,6 @@ zshenv > zprofile > zshrc > zloginの順
 
 
 ## Add.log
-- 
 - [fzf](https://github.com/jethrokuan/fzf): 曖昧(fuzzy)検索（よく分からないが、便利）
 - [fish](https://fishshell.com/)
 - 2020/10/18
@@ -24,8 +23,11 @@ zshenv > zprofile > zshrc > zloginの順
 `~/.config/fish/functions/fish_prompt.fish`
 You can also use the Web configuration tool, `$ fish_config`
 ## Custom Color
-[Variables for changing highlighting colors¶
+- [Variables for changing highlighting colors¶
 ](https://fishshell.com/docs/current/index#variables-color)
+- [set_color](https://fishshell.com/docs/current/cmds/set_color.html?highlight=color#set-color-set-the-terminal-color)
+## Commands
+[Commands](https://fishshell.com/docs/current/commands.html?highlight=alias)
 
 # shell cmd tips!
 - [これだけ覚えておけばOK！](https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a)
