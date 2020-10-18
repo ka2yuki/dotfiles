@@ -20,7 +20,7 @@ function fish_prompt
     # │ 1	15048	0%	arrêtée	sleep 100000
     # ╰─>$ echo there
 
-    set -l retc red
+    set -l retc brmagenta
     test $status = 0; and set retc magenta
 
     set -q __fish_git_prompt_showupstream
@@ -50,12 +50,12 @@ function fish_prompt
     set_color -o green
     echo -n [
     if test "$USER" = root -o "$USER" = toor
-        set_color -o red
+        set_color -o brgreen
     else
         set_color -o yellow
     end
     echo -n $USER
-    set_color -o white
+    set_color -o brred
     echo -n @
     if [ -z "$SSH_CLIENT" ]
         set_color -o blue
@@ -63,7 +63,8 @@ function fish_prompt
         set_color -o cyan
     end
     echo -n (prompt_hostname)
-    set_color -o white
+    # PATH
+    set_color -iu brwhite
     echo -n :(prompt_pwd)
     set_color -o green
     echo -n ']'
@@ -101,7 +102,7 @@ function fish_prompt
     set_color normal
     set_color $retc
     echo -n '╰~>'
-    set_color -o red
+    set_color -o yellow
     echo -n '$ '
     set_color normal
 end

@@ -97,8 +97,10 @@
   "git.confirmSync": false,
   "launch": {
 
+
   },
   "liveServer.settings.donotShowInfoMsg": true,
   "eslint.alwaysShowStatus": true,
-  "terminal.integrated.shell.osx": "/bin/bash"
+  // "terminal.integrated.shell.osx": "/bin/bash"
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish"
 }
