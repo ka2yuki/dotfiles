@@ -18,4 +18,15 @@ zshenv > zprofile > zshrc > zloginの順
 - [fish](https://fishshell.com/)
 - 2020/10/18
 
+# FISH Settings
+[~/.config/fish/config.fish](https://fishshell.com/docs/current/faq.html?highlight=config#how-do-i-run-a-command-every-login-what-s-fish-s-equivalent-to-bashrc-or-profile)
+## How do I set my prompt?
+`~/.config/fish/functions/fish_prompt.fish`
+You can also use the Web configuration tool, `$ fish_config`
+## Custom Color
+[Variables for changing highlighting colors¶
+](https://fishshell.com/docs/current/index#variables-color)
+
+# shell cmd tips!
+- [これだけ覚えておけばOK！](https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a)
 
