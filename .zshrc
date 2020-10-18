@@ -1,11 +1,11 @@
 # 少し凝った zshrc
 # License : MIT
 # http://mollifier.mit-license.org/
+# https://qiita.com/b4b4r07/items/b70178e021bef12cd4a2
 
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -23,8 +23,11 @@ AVEHIST=1000000
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+# PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
+# %# "
+
+PROMPT="╭─○ %{${fg[green]}%}[%n@%m]%{${reset_color}%} %~ 
+╰─○ "
 
 
 # 単語の区切り文字を指定する
@@ -213,6 +216,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

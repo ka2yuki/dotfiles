@@ -113,3 +113,5 @@ alias be="bundle exec"
 #### ENV
 # 
 [ -r ~/d/dotfiles/.bashrc.env ] && source ~/d/dotfiles/.bashrc.env
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

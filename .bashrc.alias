@@ -29,7 +29,7 @@ alias gs='git status && git branch'
 alias ga='git add .'
 alias gc='git add . && git commit -m' 
 alias gcl='git clone'
-alias cl='git clone'
+alias gc='git clone'
 alias gc='git add . && git commit -m' 
 gcp() { git add -A && git commit -m $1 && git push }
 alias gcm='git commit -m'
