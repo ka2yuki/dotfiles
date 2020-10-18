@@ -29,3 +29,4 @@
 
 [core]
 	excludesfile = /Users/o/.gitignore_global
+	editor = /usr/bin/nano

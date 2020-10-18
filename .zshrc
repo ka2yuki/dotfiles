@@ -139,6 +139,7 @@ alias mv='mv -i'
 
 ## npm
 alias n='npm'
+alias nr ='npm run'
 
 ## git
 alias g='git'
@@ -171,6 +172,7 @@ alias vs='code .'
 alias sudo='sudo '
 
 # グローバルエイリアス
+# ex) ps G rails
 alias -g L='| less'
 alias -g G='| grep'
 
