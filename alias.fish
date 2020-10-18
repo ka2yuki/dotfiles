@@ -31,7 +31,6 @@ alias gc='git add . && git commit -m'
 alias gcl='git clone'
 alias cl='git clone'
 alias gc='git add . && git commit -m' 
-gcp() { git add -A && git commit -m $1 && git push }
 alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gl='git log --graph --all'
@@ -43,13 +42,6 @@ alias gr='git remote -v'
 alias grv='git remote -v' 
 alias gp='git push'
 
-# VSCode setting
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
-alias vs='code .'
-
-## mysql cli (sql)only
-# alias msql_in='mssql -u issue-dev -p idP@ssw0rd12345!'
-
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
@@ -58,9 +50,4 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(rbenv init -)"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+alias vs='code .'

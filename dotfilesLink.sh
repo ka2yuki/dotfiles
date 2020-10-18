@@ -10,6 +10,7 @@ ln -sf ~/d/dotfiles/.bashrc.alias ~/.bashrc.alias
 ln -sf ~/d/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/d/dotfiles/.sqliterc ~/.sqliterc
 
+ln -sf ~/d/dotfiles/config.fish ~/.config/fish/config.fish
 ln -sf ~/d/dotfiles/alias.fish ~/.config/fish/conf.d/alias.fish
 ln -sf ~/d/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 ln -sf ~/d/dotfiles/.fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
