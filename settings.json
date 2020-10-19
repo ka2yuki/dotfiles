@@ -103,5 +103,6 @@
   "eslint.alwaysShowStatus": true,
   // "terminal.integrated.shell.osx": "/bin/bash"
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-  "workbench.colorTheme": "Dracula"
+  "workbench.colorTheme": "Dracula",
+  "editor.fontFamily": "Hack, Anonymous Pro for Powerline, Menlo, Monaco, 'Courier New', monospace"
 }
