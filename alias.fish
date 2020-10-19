@@ -42,7 +42,7 @@ alias gr='git remote -v'
 alias grv='git remote -v' 
 alias gp='git push'
 
-alias vs='VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args'
+alias vs='VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args .'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '

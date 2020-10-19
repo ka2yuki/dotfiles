@@ -102,5 +102,6 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "eslint.alwaysShowStatus": true,
   // "terminal.integrated.shell.osx": "/bin/bash"
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish"
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "workbench.colorTheme": "Dracula"
 }
