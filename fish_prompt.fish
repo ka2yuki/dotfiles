@@ -55,6 +55,10 @@
 # Helper methods
 # ==============================
 
+function gcp
+    git add -A && git commit -m $argv && git push 
+end
+
 function __bobthefish_basename -d 'basically basename, but faster'
     string replace -r '^.*/' '' -- $argv
 end

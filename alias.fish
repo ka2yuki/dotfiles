@@ -51,4 +51,3 @@ alias sudo='sudo '
 # ex) ps G rails
 alias -g L='| less'
 alias -g G='| grep'
-
