@@ -13,8 +13,12 @@ case ${OSTYPE} in
     linux*)
         #Linux用の設定
         alias ls='ls -a -F --color=auto'
-        adduser dev
-        su - dev
+        if test "$(whoami)" = "root"
+        then
+          echo "🚨 is root user.🚨"
+          adduser dev
+          su - dev
+        fi
         ;;
 esac
 # 作業ユーザー削除
