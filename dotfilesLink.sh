@@ -8,7 +8,7 @@ if type "brew" > /dev/null 2>&1; then
   echo "Exist! brew ✅" #コマンドが存在する時の処理
 else
   echo "NOT exist Brew!" #コマンドが存在しないときの処理
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 fi
 # =======================================
 # OS 別の設定
