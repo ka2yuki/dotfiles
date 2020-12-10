@@ -18,11 +18,14 @@ case ${OSTYPE} in
           echo "🚨 is root user.🚨"
           adduser dev
           su - dev
+          exit
         fi
         ;;
 esac
 # 作業ユーザー削除
 # userdel -r dev
+
+
 
 # =======================================
 echo "🔎 Check Brew🍺 now"
