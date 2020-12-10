@@ -8,7 +8,7 @@ echo "."
 if type "brew" > /dev/null 2>&1; then
   echo "Exist! brew 👍🏻" #コマンドが存在する時の処理
 else
-  echo "NOT exist!" #コマンドが存在しないときの処理
+  echo "NOT exist Brew!" #コマンドが存在しないときの処理
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 # =======================================
@@ -56,10 +56,12 @@ ln -sf ${PWD}/Dotfiles/.gitconfig ${PWD}/.gitconfig
 
 # fish cmd exist? check!
 # fish_config > /dev/null 2>&1
+# fi
+echo "🔎 Now Check fish_config"
 if type "fish_config" > /dev/null 2>&1; then
   echo "👍🏻 Exist! FISH" #コマンドが存在する時の処理
 else
-  echo "NOT exist!" #コマンドが存在しないときの処理
+  echo "NOT exist! FISH" #コマンドが存在しないときの処理
   brew install fish
 fi
 
@@ -69,7 +71,7 @@ fi
 #   echo "NOT exist!"
 #   brew install fish
 # fi
-echo "🚀 Now Checking git.io/fisher"
+echo "🔎 Now Check git.io/fisher"
 echo "this's Fisher Extention-Management-Tool."
 # install fisher for fish extention management tool.
 if [ -e "$HOME/.config/fish/functions/fisher.fish" ]; then
@@ -79,7 +81,7 @@ else
   curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fi
 
-echo "🚀 Node.js chack.."
+echo "🔎 Node.js chack.."
 # node -v &> /dev/null
 # if [ $? -ne 0 ]; then
 if type "node -v" > /dev/null 2>&1; then
