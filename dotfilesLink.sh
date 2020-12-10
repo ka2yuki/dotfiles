@@ -66,6 +66,10 @@ then
     sleep 2
     echo 🐓
     sleep 1
+    echo .
+    sleep 1
+    echo .
+    sleep 1
     echo 🍗
     sleep 2
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
@@ -75,11 +79,16 @@ then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
     sleep 2
     echo 🐓
     sleep 1
+    echo .
+    sleep 1
+    echo .
+    sleep 1
     echo 🍗
+    sleep 1
+    echo .
     sleep 2
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
     sleep 2
@@ -127,7 +136,7 @@ echo "======================================="
 if type "fish_config" > /dev/null 2>&1; then
   echo "✅ Exist! FISH" #コマンドが存在する時の処理
 else
-  echo "🐖\".. NOT exist! FISH_config.. 🐷" #コマンドが存在しないときの処理
+  echo "🐷 NOT Exist! FISH_config.. 🐷" #コマンドが存在しないときの処理
   brew install fish
 fi
 
