@@ -31,7 +31,9 @@ esac
 # =======================================
 echo "🔎 Check Brew🍺 now"
 echo "🐣"
+sleep 1
 echo 🐥
+sleep 1
 echo 🐓
 echo "======================================="
 # if type "brew" > /dev/null 2>&1; then
@@ -53,6 +55,7 @@ then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    sleep 1
     echo 🍗
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
@@ -60,6 +63,7 @@ then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    sleep 1
     echo 🍗
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
   fi
