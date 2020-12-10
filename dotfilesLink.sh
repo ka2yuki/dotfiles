@@ -17,8 +17,8 @@ case ${OSTYPE} in
         then
           echo "🚨 is root user.🚨"
           adduser dev
-          su - dev
           echo "== Swhich USER. to dev. =="
+          su - dev
           exit
         fi
         ;;
