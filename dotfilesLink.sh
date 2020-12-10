@@ -1,7 +1,7 @@
 # !/bin/bash
 
 # =======================================
-echo "🔎 Check brew now"
+echo "🔎 Check Brew🍺 now"
 echo "."
 echo "======================================="
 # if type "brew" > /dev/null 2>&1; then
@@ -20,10 +20,14 @@ then
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
   fi
 fi
 # =======================================
@@ -83,7 +87,7 @@ echo "======================================="
 if type "fish_config" > /dev/null 2>&1; then
   echo "✅ Exist! FISH" #コマンドが存在する時の処理
 else
-  echo "NOT exist! FISH" #コマンドが存在しないときの処理
+  echo "💸 NOT exist! FISH" #コマンドが存在しないときの処理
   brew install fish
 fi
 
@@ -100,7 +104,7 @@ echo "this's Fisher Extention-Management-Tool."
 if [ -e "$HOME/.config/fish/functions/fisher.fish" ]; then
   echo "Exist! functions/fisher.fish" 
 else
-  echo "NOT exist! functions/fisher.fish" 
+  echo "😢 NOT exist! functions/fisher.fish" 
   curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fi
 
@@ -109,7 +113,7 @@ echo "======================================="
 # node -v &> /dev/null
 # if [ $? -ne 0 ]; then
 if type "node -v" > /dev/null 2>&1; then
-  echo "NOT exist! Node.js"
+  echo "💸 NOT exist! Node.js"
   brew install node
 else
   echo "✅ Exist! Node.js" 
