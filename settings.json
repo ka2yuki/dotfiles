@@ -2,11 +2,34 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // "vetur.format.defaultFormatter.css": "prettier",
   "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", 
+    "editor.formatOnSave": true,
+  },
+  "[sass]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode", 
     "editor.formatOnSave": true
   },
-  "[js]": {
+  "[javascript]": {
     "editor.formatOnSave": true
   },
+  "editor.codeActionsOnSave": {
+      // For ESLint
+      "source.fixAll.eslint": true,
+      // For TSLint
+      "source.fixAll.tslint": true,
+      // For Stylelint
+      "source.fixAll.stylelint": true,
+      "source.fixAll.sass": true
+  },
+  // "compile-hero": {
+  //   "disable-compile-files-on-did-save-code": false,
+  //   "notification-toggle": false,
+  //   "javascript-output-directory": "./out",
+  //   "javascript-output-toggle": false,
+  //   "sass-output-directory": "../out",
+  //   "sass-output-toggle": true,
+  //   "ignore": ["src/test.js", "*/test.scss", "**/spec/*", "**/src/**/*"],
+  // },  
   // editor
   "editor.minimap.enabled": false,
   "editor.formatOnPaste": true, // ペースト時に自動でフォーマット
@@ -47,7 +70,7 @@
   ],
   // markdown-pdf
   "markdown-pdf.convertOnSave": false, // 保存時に自動でpdf化しない
-  "markdown-pdf.type": "pdf", // PDFで出力
+  "markdown-pdf.type": ["pdf"], // PDFで出力
   "markdown-pdf.styles": [
     "~/Library/Application\\ Support/Code/User",
     "~/Application Support/Code/User/md_preview.css"
@@ -66,12 +89,12 @@
   },
   "files.exclude": {
     // exclude: "s" を忘れずに。
-    "**/node_modules": true,
+    // "**/node_modules": true,
     // if you need React-Project..
     // "**/public": true,
     // "**/build": true,
     // "**/.firebase": true,
-    "**/package-lock.json": true,
+    // "**/package-lock.json": true,
     ".DS_Store": true
   },
   "html.format.enable": true,
@@ -104,5 +127,7 @@
   // "terminal.integrated.shell.osx": "/bin/bash"
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "workbench.colorTheme": "Dracula",
-  "editor.fontFamily": "Hack, Anonymous Pro for Powerline, Menlo, Monaco, 'Courier New', monospace"
+  "editor.fontFamily": "Hack, Anonymous Pro for Powerline, Menlo, Monaco, 'Courier New', monospace",
+  "stylelint.enable": false,
+  "workbench.activityBar.visible": false
 }
