@@ -2,9 +2,9 @@
 # https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a
 
 # =======================================
-echo "Check brew now"
+echo "🔎Check brew now"
 echo "."
-echo "."
+echo "======================================="
 if type "brew" > /dev/null 2>&1; then
   echo "Exist! brew 👍🏻" #コマンドが存在する時の処理
 else
@@ -46,18 +46,19 @@ ln -sf ${PWD}/Dotfiles/.sqliterc ${PWD}/.sqliterc
 # fi
 
 # =======================================
-ln -sf ${PWD}/Dotfiles/config.fish ${PWD}/.config/fish/config.fish
-ln -sf ${PWD}/Dotfiles/alias.fish ${PWD}/.config/fish/conf.d/alias.fish
-ln -sf ${PWD}/Dotfiles/fish_prompt.fish ${PWD}/.config/fish/functions/fish_prompt.fish
-ln -sf ${PWD}/Dotfiles/.fish_user_key_bindings.fish ${PWD}/.config/fish/functions/fish_user_key_bindings.fish
+ln -sf ${PWD}/Dotfiles/fish/config.fish ${HOME}/.config/fish/config.fish
+ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+ln -sf ${PWD}/Dotfiles/fish/fish_prompt.fish ${HOME}/.config/fish/functions/fish_prompt.fish
+ln -sf ${PWD}/Dotfiles/fish/.fish_user_key_bindings.fish ${HOME}/.config/fish/functions/fish_user_key_bindings.fish
 # Other
-ln -sf ${PWD}/Dotfiles/.gitconfig ${PWD}/.gitconfig
+ln -sf ${PWD}/Dotfiles/.gitconfig ${HOME}/.gitconfig
 # ln -sf ${PWD}/Dotfiles/com.googlecode.iterm2.plist${PWD} 
 
 # fish cmd exist? check!
 # fish_config > /dev/null 2>&1
 # fi
 echo "🔎 Now Check fish_config"
+echo "======================================="
 if type "fish_config" > /dev/null 2>&1; then
   echo "👍🏻 Exist! FISH" #コマンドが存在する時の処理
 else
@@ -72,6 +73,7 @@ fi
 #   brew install fish
 # fi
 echo "🔎 Now Check git.io/fisher"
+echo "======================================="
 echo "this's Fisher Extention-Management-Tool."
 # install fisher for fish extention management tool.
 if [ -e "$HOME/.config/fish/functions/fisher.fish" ]; then
@@ -82,6 +84,7 @@ else
 fi
 
 echo "🔎 Node.js chack.."
+echo "======================================="
 # node -v &> /dev/null
 # if [ $? -ne 0 ]; then
 if type "node -v" > /dev/null 2>&1; then
