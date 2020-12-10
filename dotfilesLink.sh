@@ -1,5 +1,4 @@
-# shell cmd tips!
-# https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a
+# !/bin/bash
 
 # =======================================
 echo "🔎 Check brew now"
@@ -9,7 +8,7 @@ if type "brew" > /dev/null 2>&1; then
   echo "Exist! brew ✅" #コマンドが存在する時の処理
 else
   echo "NOT exist Brew!" #コマンドが存在しないときの処理
-  echo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 # =======================================
 # OS 別の設定

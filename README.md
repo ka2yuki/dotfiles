@@ -112,3 +112,6 @@ $PWD
 ```sh
 $OSTYPE # OS 別に 処理を分ける際など。
 ```
+
+# shell cmd tips!
+https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a
