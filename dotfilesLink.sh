@@ -13,11 +13,12 @@ case ${OSTYPE} in
     linux*)
         #Linux用の設定
         alias ls='ls -a -F --color=auto'
-        useradd -m dev
-        su dev
+        adduser dev
+        su - dev
         ;;
 esac
-
+# 作業ユーザー削除
+# userdel -r dev
 
 # =======================================
 echo "🔎 Check Brew🍺 now"
