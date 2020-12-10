@@ -31,9 +31,17 @@ esac
 # =======================================
 echo "🔎 Check Brew🍺 now"
 sleep 1
-echo "🐣"
+echo 🐣
+sleep 1
+echo .
+sleep 1
+echo .
 sleep 2
 echo 🐥
+sleep 1
+echo .
+sleep 1
+echo .
 sleep 2
 echo 🐓
 sleep 1
@@ -133,7 +141,12 @@ echo "this's Fisher Extention-Management-Tool."
 if [ -e "$HOME/.config/fish/functions/fisher.fish" ]; then
   echo "✅ Exist! functions/fisher.fish" 
 else
-  echo "😢 NOT exist! functions/fisher.fish" 
+  echo "🐖 \".. NOT exist! functions/fisher.fish" 
+  sleep 1
+  echo 🐷
+  sleep 1
+  echo 🐽
+  sleep 1
   curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fi
 
@@ -142,7 +155,7 @@ echo "======================================="
 # node -v &> /dev/null
 # if [ $? -ne 0 ]; then
 if type "node -v" > /dev/null 2>&1; then
-  echo "💸 NOT exist! Node.js"
+  echo "🐖\".. NOT exist! Node.js"
   brew install node
 else
   echo "✅ Exist! Node.js" 
