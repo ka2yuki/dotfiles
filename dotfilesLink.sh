@@ -1,4 +1,23 @@
 # !/bin/bash
+# =======================================
+# OS 別の設定
+echo $OSTYPE
+case ${OSTYPE} in
+    darwin*)
+        #Mac用の設定
+        export CLICOLOR=1
+        alias ls='ls -a -G -F'
+        ln -fnsv ${PWD}/Dotfiles/settings.json ${PWD}/Library/Application\ Support/Code/User/settings.json
+        ln -fnsv ${PWD}/Dotfiles/md_preview.css ${PWD}/Library/Application\ Support/Code/User/md_preview.css
+        ;;
+    linux*)
+        #Linux用の設定
+        alias ls='ls -a -F --color=auto'
+        useradd -m dev
+        su dev
+        ;;
+esac
+
 
 # =======================================
 echo "🔎 Check Brew🍺 now"
@@ -32,22 +51,7 @@ then
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
   fi
 fi
-# =======================================
-# OS 別の設定
-echo $OSTYPE
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -a -G -F'
-        ln -fnsv ${PWD}/Dotfiles/settings.json ${PWD}/Library/Application\ Support/Code/User/settings.json
-        ln -fnsv ${PWD}/Dotfiles/md_preview.css ${PWD}/Library/Application\ Support/Code/User/md_preview.css
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -a -F --color=auto'
-        ;;
-esac
+
 
 
 ln -sf ${PWD}/Dotfiles/.zshrc ${PWD}/.zsh_profile
