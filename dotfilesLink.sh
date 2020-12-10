@@ -30,11 +30,13 @@ esac
 
 # =======================================
 echo "🔎 Check Brew🍺 now"
+sleep 1
 echo "🐣"
-sleep 1
+sleep 2
 echo 🐥
-sleep 1
+sleep 2
 echo 🐓
+sleep 1
 echo "======================================="
 # if type "brew" > /dev/null 2>&1; then
 #   echo "Exist! brew ✅" #コマンドが存在する時の処理
@@ -57,7 +59,9 @@ then
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     sleep 1
     echo 🍗
+    sleep 2
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
+    sleep 2
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -65,7 +69,9 @@ then
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     sleep 1
     echo 🍗
+    sleep 2
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
+    sleep 2
   fi
 fi
 
