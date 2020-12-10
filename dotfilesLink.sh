@@ -2,11 +2,11 @@
 # https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a
 
 # =======================================
-echo "🔎Check brew now"
+echo "🔎 Check brew now"
 echo "."
 echo "======================================="
 if type "brew" > /dev/null 2>&1; then
-  echo "Exist! brew 👍🏻" #コマンドが存在する時の処理
+  echo "Exist! brew ✅" #コマンドが存在する時の処理
 else
   echo "NOT exist Brew!" #コマンドが存在しないときの処理
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -47,7 +47,13 @@ ln -sf ${PWD}/Dotfiles/.sqliterc ${PWD}/.sqliterc
 
 # =======================================
 ln -sf ${PWD}/Dotfiles/fish/config.fish ${HOME}/.config/fish/config.fish
-ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+echo "🔎 Check DIR ~/.config/fish/conf.d"
+if [ -e ${HOME}/.config/fish/conf.d ]; then
+  ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+else
+  mkdir ${HOME}/.config/fish/conf.d
+  ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+fi
 ln -sf ${PWD}/Dotfiles/fish/fish_prompt.fish ${HOME}/.config/fish/functions/fish_prompt.fish
 ln -sf ${PWD}/Dotfiles/fish/.fish_user_key_bindings.fish ${HOME}/.config/fish/functions/fish_user_key_bindings.fish
 # Other
@@ -60,7 +66,7 @@ ln -sf ${PWD}/Dotfiles/.gitconfig ${HOME}/.gitconfig
 echo "🔎 Now Check fish_config"
 echo "======================================="
 if type "fish_config" > /dev/null 2>&1; then
-  echo "👍🏻 Exist! FISH" #コマンドが存在する時の処理
+  echo "✅ Exist! FISH" #コマンドが存在する時の処理
 else
   echo "NOT exist! FISH" #コマンドが存在しないときの処理
   brew install fish
@@ -91,7 +97,7 @@ if type "node -v" > /dev/null 2>&1; then
   echo "NOT exist! Node.js"
   brew install node
 else
-  echo "👍🏻 Exist! Node.js" 
+  echo "✅ Exist! Node.js" 
 fi
 
 chsh -s $(which fish)
