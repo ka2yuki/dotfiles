@@ -1,33 +1,76 @@
 # shell cmd tips!
 # https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a
 
-ln -sf ~/d/dotfiles/.zshrc ~/.zsh_profile
-ln -sf ~/d/dotfiles/.zshrc ~/.zshrc
+# =======================================
+echo "Check brew now"
+echo "."
+echo "."
+if type "brew" > /dev/null 2>&1; then
+  echo "Exist! brew 👍🏻" #コマンドが存在する時の処理
+else
+  echo "NOT exist!" #コマンドが存在しないときの処理
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+# =======================================
+# OS 別の設定
+echo $OSTYPE
+case ${OSTYPE} in
+    darwin*)
+        #Mac用の設定
+        export CLICOLOR=1
+        alias ls='ls -a -G -F'
+        ln -fnsv ${PWD}/Dotfiles/settings.json ${PWD}/Library/Application\ Support/Code/User/settings.json
+        ln -fnsv ${PWD}/Dotfiles/md_preview.css ${PWD}/Library/Application\ Support/Code/User/md_preview.css
+        ;;
+    linux*)
+        #Linux用の設定
+        alias ls='ls -a -F --color=auto'
+        ;;
+esac
 
-ln -sf ~/d/dotfiles/.bash_profile ~/.bash_profile
-ln -sf ~/d/dotfiles/.bashrc ~/.bashrc
-ln -sf ~/d/dotfiles/.bashrc.alias ~/.bashrc.alias
-ln -sf ~/d/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/d/dotfiles/.sqliterc ~/.sqliterc
 
-ln -sf ~/d/dotfiles/config.fish ~/.config/fish/config.fish
-ln -sf ~/d/dotfiles/alias.fish ~/.config/fish/conf.d/alias.fish
-ln -sf ~/d/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
-ln -sf ~/d/dotfiles/.fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
+ln -sf ${PWD}/Dotfiles/.zshrc ${PWD}/.zsh_profile
+ln -sf ${PWD}/Dotfiles/.zshrc ${PWD}/.zshrc
 
-ln -sf ~/d/dotfiles/.gitconfig ~/.gitconfig
-ln -fnsv ~/d/dotfiles/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -fnsv ~/d/dotfiles/md_preview.css ~/Library/Application\ Support/Code/User/md_preview.css
-# ln -sf ~/d/dotfiles/com.googlecode.iterm2.plist ~
+ln -sf ${PWD}/Dotfiles/.bash_profile ${PWD}/.bash_profile
+ln -sf ${PWD}/Dotfiles/.bashrc ${PWD}/.bashrc
+ln -sf ${PWD}/Dotfiles/.bashrc.alias ${PWD}/.bashrc.alias
+ln -sf ${PWD}/Dotfiles/.vimrc ${PWD}/.vimrc
+ln -sf ${PWD}/Dotfiles/.sqliterc ${PWD}/.sqliterc
+# Fish
+# if [ -e {確認したいファイルかディレクトリのパス} ]; then
+# if [ -e ~/.config ]; then
+#     # 存在する場合
+# else
+#     # 存在しない場合
+# fi
+
+# =======================================
+ln -sf ${PWD}/Dotfiles/config.fish ${PWD}/.config/fish/config.fish
+ln -sf ${PWD}/Dotfiles/alias.fish ${PWD}/.config/fish/conf.d/alias.fish
+ln -sf ${PWD}/Dotfiles/fish_prompt.fish ${PWD}/.config/fish/functions/fish_prompt.fish
+ln -sf ${PWD}/Dotfiles/.fish_user_key_bindings.fish ${PWD}/.config/fish/functions/fish_user_key_bindings.fish
+# Other
+ln -sf ${PWD}/Dotfiles/.gitconfig ${PWD}/.gitconfig
+# ln -sf ${PWD}/Dotfiles/com.googlecode.iterm2.plist${PWD} 
 
 # fish cmd exist? check!
-fish_config > /dev/null 2>&1
-if [ $? -eq 127 ]; then
-  echo "Exist! FISH" 
+# fish_config > /dev/null 2>&1
+if type "fish_config" > /dev/null 2>&1; then
+  echo "👍🏻 Exist! FISH" #コマンドが存在する時の処理
 else
-  echo "NOT exist!"
+  echo "NOT exist!" #コマンドが存在しないときの処理
   brew install fish
 fi
+
+# if [ $? -eq 127 ]; then
+#   echo "Exist! FISH" 
+# else
+#   echo "NOT exist!"
+#   brew install fish
+# fi
+echo "🚀 Now Checking git.io/fisher"
+echo "this's Fisher Extention-Management-Tool."
 # install fisher for fish extention management tool.
 if [ -e "$HOME/.config/fish/functions/fisher.fish" ]; then
   echo "Exist! functions/fisher.fish" 
@@ -36,13 +79,14 @@ else
   curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fi
 
-# Node.js chack..
-node -v &> /dev/null
-if [ $? -ne 0 ]; then
+echo "🚀 Node.js chack.."
+# node -v &> /dev/null
+# if [ $? -ne 0 ]; then
+if type "node -v" > /dev/null 2>&1; then
   echo "NOT exist! Node.js"
   brew install node
 else
-  echo "Exist! Node.js" 
+  echo "👍🏻 Exist! Node.js" 
 fi
 
 chsh -s $(which fish)
