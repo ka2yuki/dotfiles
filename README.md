@@ -33,8 +33,8 @@ You can also use the Web configuration tool, `$ fish_config`
 - [これだけ覚えておけばOK！](https://qiita.com/yn-misaki/items/3ec0605cba228a7d5c9a)
 
 # コマンドの有無
-[コマンドの有無による条件分岐
-](https://qiita.com/8ayac/items/b6b6f0a385d08659316b | qiita)
+[コマンドの有無による条件分岐](https://qiita.com/8ayac/items/b6b6f0a385d08659316b | qiita)
+
 ```sh
 if type "コマンド" > /dev/null 2>&1; then
     # echo "exist!"
@@ -43,6 +43,10 @@ else
     echo "NOT exist!" #コマンドが存在しないときの処理
 fi
 ```
+**`/dev/null 2>&1`**
+標準エラー出力 の結果を 標準出力 にマージして、`/dev/null`に捨てる.
+📌MUST READ!! [標準エラー出力を捨てるな! | qiita](https://qiita.com/ritukiii/items/b3d91e97b71ecd41d4ea)
+`
 # 変数
 - 変数名の先頭に $ を付けない ($ は参照時のみ)
 - ＝ の前後にスペースはNG。

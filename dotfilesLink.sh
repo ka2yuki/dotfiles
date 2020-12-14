@@ -5,17 +5,27 @@ echo $OSTYPE
 case ${OSTYPE} in
     darwin*)
         #Mac用の設定
+        # ! 面倒なので、update は 無闇に行わない。
+        if type 'brew upgrade' > /dev/null 2>&1; then
+          brew upgrade
+        else
+          echo 'not brew running..'
+        fi
+
         export CLICOLOR=1
         alias ls='ls -a -G -F'
-        ln -fnsv ${PWD}/Dotfiles/settings.json ${PWD}/Library/Application\ Support/Code/User/settings.json
-        ln -fnsv ${PWD}/Dotfiles/md_preview.css ${PWD}/Library/Application\ Support/Code/User/md_preview.css
+        # VSCode, Markdwon.css
+        ln -fnsv ${PWD}/settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+        ln -fnsv ${PWD}/md_preview.css ${HOME}/Library/Application\ Support/Code/User/md_preview.css
         ;;
     linux*)
         #Linux用の設定
+        yum update -y
         alias ls='ls -a -F --color=auto'
         if test "$(whoami)" = "root"
         then
           echo "🚨 is root user.🚨"
+          yum update-minimal
           adduser dev
           echo "== Swhich USER. to dev. =="
           su - dev
@@ -26,7 +36,75 @@ esac
 # 作業ユーザー削除
 # userdel -r dev
 
+# =======================================
+# RUBY install
+# =======================================
+if type 'rbenv' > /dev/null 2>&1; then
+  echo '✅ Exist! .rbenv cmd.'
+else
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  cd ~/.rbenv && src/configure && make -C src
+  # When not throgh PATH.
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile 
+  # 上記 .bash_profile に追記したモノを 更新させる。
+  source ~/.bash_profile
 
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile # ✅
+  or
+  eval "$(rbenv init -)"
+
+  echo ✅ PATH: OK. so far.
+
+  # Install ruby-build, which provides the rbenv install command that simplifies the process of installing new Ruby versions.
+
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+  source ~/.bash_profile
+  # 5. 🔎 Verify that rbenv is properly set up using this rbenv-doctor script:
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+  rbenv install --list
+  rbenv install 2.7.2
+
+  rbenv versions
+  rbenv use 2.7.2
+  eval "$(rbenv init -)"
+  # or
+  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+  source ~/.bash_profile
+
+  # When not available `rbenv install`, install plugin ruby-build.
+  # As an rbenv plugin
+  # https://github.com/rbenv/ruby-build#installation
+  mkdir -p "$(rbenv root)"/plugins
+  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+fi
+
+# =======================================
+# GIT INSTALL
+# =======================================
+if type 'git' > /dev/null 2>&1; then
+  echo '✅ Exist! git cmd.'
+else
+  OLD_GIT_VER=`git --version`
+  yum -y install gcc curl-devel expat-devel gettext-devel openssl-devel zlib-devel perl-ExtUtils-MakeMaker autoconf
+  # インストールに適切な場所に移動
+  cd /usr/local/src/
+  # サイトから Git の圧縮ファイルをダウンロード
+  # 最新 Version はこちらでチェック。https://www.kernel.org/pub/software/scm/git/
+  wget https://www.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz
+  # tar にする. .xzが付与されいるので.
+  mv git-2.29.2.tar.xz git-2.29.2.tar
+  # 解凍する
+  tar xvf git-2.29.2.tar
+  # 解凍した Git ディレクトリに移動
+  cd git-2.29.2/
+  # make コマンドでインストール
+  make prefix=/usr/local all
+  make prefix=/usr/local install
+
+  # バージョン確認コマンド
+  echo NEW:$(git --version), OLD:$OLD_GIT_VER
+fi
 
 # =======================================
 echo "🔎 Check Brew🍺 now"
@@ -55,7 +133,7 @@ echo "======================================="
 # Check for Homebrew
 if test ! $(which brew)
 then
-  echo "NOT exist Brew!" #コマンドが存在しないときの処理
+  echo "🐽 NOT exist Brew!" #コマンドが存在しないときの処理
   echo "  Installing Homebrew for you."
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
@@ -97,14 +175,14 @@ fi
 
 
 
-ln -sf ${PWD}/Dotfiles/.zshrc ${PWD}/.zsh_profile
-ln -sf ${PWD}/Dotfiles/.zshrc ${PWD}/.zshrc
+ln -sf ${PWD}/.zshrc ${PWD}/.zsh_profile
+ln -sf ${PWD}/.zshrc ${PWD}/.zshrc
 
-ln -sf ${PWD}/Dotfiles/.bash_profile ${PWD}/.bash_profile
-ln -sf ${PWD}/Dotfiles/.bashrc ${PWD}/.bashrc
-ln -sf ${PWD}/Dotfiles/.bashrc.alias ${PWD}/.bashrc.alias
-ln -sf ${PWD}/Dotfiles/.vimrc ${PWD}/.vimrc
-ln -sf ${PWD}/Dotfiles/.sqliterc ${PWD}/.sqliterc
+ln -sf ${PWD}/.bash_profile ${PWD}/.bash_profile
+ln -sf ${PWD}/.bashrc ${PWD}/.bashrc
+ln -sf ${PWD}/.bashrc.alias ${PWD}/.bashrc.alias
+ln -sf ${PWD}/.vimrc ${PWD}/.vimrc
+ln -sf ${PWD}/.sqliterc ${PWD}/.sqliterc
 # Fish
 # if [ -e {確認したいファイルかディレクトリのパス} ]; then
 # if [ -e ~/.config ]; then
@@ -114,30 +192,47 @@ ln -sf ${PWD}/Dotfiles/.sqliterc ${PWD}/.sqliterc
 # fi
 
 # =======================================
-ln -sf ${PWD}/Dotfiles/fish/config.fish ${HOME}/.config/fish/config.fish
+ln -sf ${PWD}/fish/config.fish ${HOME}/.config/fish/config.fish
 echo "🔎 Check DIR ~/.config/fish/conf.d"
 if [ -e ${HOME}/.config/fish/conf.d ]; then
-  ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+  ln -sf ${PWD}/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
 else
   mkdir ${HOME}/.config/fish/conf.d
-  ln -sf ${PWD}/Dotfiles/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
+  ln -sf ${PWD}/fish/alias.fish ${HOME}/.config/fish/conf.d/alias.fish
 fi
-ln -sf ${PWD}/Dotfiles/fish/fish_prompt.fish ${HOME}/.config/fish/functions/fish_prompt.fish
-ln -sf ${PWD}/Dotfiles/fish/.fish_user_key_bindings.fish ${HOME}/.config/fish/functions/fish_user_key_bindings.fish
+ln -sf ${PWD}/fish/fish_prompt.fish ${HOME}/.config/fish/functions/fish_prompt.fish
+ln -sf ${PWD}/fish/.fish_user_key_bindings.fish ${HOME}/.config/fish/functions/fish_user_key_bindings.fish
 # Other
-ln -sf ${PWD}/Dotfiles/.gitconfig ${HOME}/.gitconfig
-# ln -sf ${PWD}/Dotfiles/com.googlecode.iterm2.plist${PWD} 
+ln -sf ${PWD}/.gitconfig ${HOME}/.gitconfig
+# ln -sf ${PWD}/com.googlecode.iterm2.plist${PWD} 
 
 # fish cmd exist? check!
 # fish_config > /dev/null 2>&1
 # fi
-echo "🔎 Now Check fish_config"
+echo "🔎 Now Check fish"
 echo "======================================="
-if type "fish_config" > /dev/null 2>&1; then
+# if type '$(which fish)' > /dev/null 2>&1; then
+# なぜか上記では 
+if [ -e "$(which fish)" ]; then
+  echo $(which fish >&1)
   echo "✅ Exist! FISH" #コマンドが存在する時の処理
+  # FISH=$(which fish)
+  # echo `/usr/local/bin/fish`
+  # echo $SHELL
+  # echo $FISH
+  # echo $($SHELL -eq $FISH)
+  # if test ! $($SHELL!=$FISH); then
+    chsh -s $(which fish) 
+  # fi
+  echo 'fish処理完了!!🎉'
 else
-  echo "🐷 NOT Exist! FISH_config.. 🐷" #コマンドが存在しないときの処理
+  echo $(which fish >&2)
+  echo "🐷 NOT Exist! fish_config.. 🐷" #コマンドが存在しないときの処理
+  exit 
   brew install fish
+  chsh -s $(which fish) 
+  echo `fish`
+  echo 'fish処理完了!!🎉'
 fi
 
 # if [ $? -eq 127 ]; then
@@ -173,7 +268,7 @@ else
   echo "✅ Exist! Node.js" 
 fi
 
-chsh -s $(which fish)
+
 # chsh -s /bin/zsh
 # chsh -s /bin/bash
 
@@ -215,3 +310,11 @@ else
   brew cask install font-hackge
   brew tap homebrew/cask-fonts
 fi
+
+for i in `seq 5`
+do
+  echo .
+done
+echo "==================="
+echo "PLEASE type 'fish'"
+echo "==================="

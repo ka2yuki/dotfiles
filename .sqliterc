@@ -1,5 +1,1 @@
-.mode column
-.width 0
-.headers on
-.timer on
-.nullvalue NULL
+/Users/o/d/Dotfiles/.sqliterc
