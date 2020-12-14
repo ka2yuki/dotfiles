@@ -22,15 +22,15 @@ case ${OSTYPE} in
         #Linux用の設定
         yum update -y
         alias ls='ls -a -F --color=auto'
-        if test "$(whoami)" = "root"
-        then
-          echo "🚨 is root user.🚨"
-          yum update-minimal
-          adduser dev
-          echo "== Swhich USER. to dev. =="
-          su - dev
-          exit
-        fi
+        # if test "$(whoami)" = "root"
+        # then
+        #   echo "🚨 is root user.🚨"
+        #   yum update-minimal
+        #   adduser dev
+        #   echo "== Swhich USER. to dev. =="
+        #   su - dev
+        #   exit
+        # fi
         ;;
 esac
 # 作業ユーザー削除
