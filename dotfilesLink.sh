@@ -14,7 +14,7 @@ case ${OSTYPE} in
 
         export CLICOLOR=1
         alias ls='ls -a -G -F'
-        # VSCode, Markdwon.css
+        # local SETTINGS The VSCode.settings and Markdwon.css to SAME GIT-REPO
         ln -fnsv ${PWD}/settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
         ln -fnsv ${PWD}/md_preview.css ${HOME}/Library/Application\ Support/Code/User/md_preview.css
         ;;
@@ -36,9 +36,9 @@ esac
 # 作業ユーザー削除
 # userdel -r dev
 
-# =======================================
-# RUBY install
-# =======================================
+echo "======================================="
+echo "RUBY install"
+echo "======================================="
 if type 'rbenv' > /dev/null 2>&1; then
   echo '✅ Exist! .rbenv cmd.'
 else
@@ -110,15 +110,15 @@ fi
 echo "🔎 Check Brew🍺 now"
 sleep 1
 echo 🐣
-sleep 1
+sleep .3
+echo .
+sleep .3
 echo .
 sleep 1
-echo .
-sleep 2
 echo 🐥
-sleep 1
+sleep .3
 echo .
-sleep 1
+sleep .3
 echo .
 sleep 1
 echo "======================================="
@@ -141,35 +141,35 @@ then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    sleep 2
+    sleep 1
     echo 🐓
-    sleep 1
+    sleep .3
     echo .
-    sleep 1
+    sleep .3
     echo .
-    sleep 1
+    sleep .3
     echo 🍗
-    sleep 2
+    sleep 1
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
-    sleep 2
+    sleep 1
   elif test "$(expr substr $(uname -s) 1 5)" = "Linux"
   then
     /bin/bash cd $HOME && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    sleep 2
+    sleep 1
     echo 🐓
-    sleep 1
+    sleep .3
     echo .
-    sleep 1
+    sleep .3
     echo .
-    sleep 1
+    sleep .3
     echo 🍗
-    sleep 1
+    sleep .3
     echo .
-    sleep 2
+    sleep 1
     echo "🎉 Installed! Brew🍺 " #コマンドが存在する時の処理
-    sleep 2
+    sleep 1
   fi
 fi
 
@@ -288,20 +288,49 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 omf install rbenv
 ## VimにPowerlineの　fish版です。
 fisher add oh-my-fish/theme-bobthefish
+
+echo "======================================="
+echo "poserline install at ~/fonts"
+echo "======================================="
+cd $HOME
 # 文字化け 改善
 git clone https://github.com/powerline/fonts.git --depth=1
 # install
 cd fonts
 ./install.sh
 
-# Theme "DRACULA🧛🏻‍♂️" INSTALL🎉 :: https://draculatheme.com/
+
+# =======================================
+# echo -e "\e[36;40;4m下線つき\e[m"
+# \e[ : start
+# color;background;style(underbar etc.)
+# m   : end
+COLOR_0="\e[36;41;4m"
+COLOR_1="\e[36;4m"
+COLOR_OFF="\e[m\n"
+bold=$(tput bold)
+normal=$(tput sgr0)
+# echo "${COLOR_1}"
+# echo "${COLOR_1}hoge${COLOR_OFF}"
+printf "${COLOR_1}hoge${COLOR_OFF}"
+# =======================================
+
+
+echo "======================================="
+echo "Theme 'DRACULA️🧛' ️install for Hyper.app"
+echo https://draculatheme.com/
+printf "${COLOR_1}https://draculatheme.com/${COLOR_OFF}"
+echo "======================================="
+# Theme "DRACULA🧛🏻‍" INSTALL🎉:: https://draculatheme.com/
 git clone https://github.com/dracula/iterm.git
 # to hyper
 hyper install hyper-dracula
 # ADD cmd+. , Type to Fonts NAME!!
 
-# Fonts install 白玄
-# https://github.com/yuru7/HackGen/
+echo "======================================="
+echo "Fonts install 白玄"
+printf "https://github.com/yuru7/HackGen/"
+echo "======================================="
 if [ -e "$HOME/Library/Fonts/Hack-Bold.ttf" ]; then
   echo "Exist Hack fonts."
 else
